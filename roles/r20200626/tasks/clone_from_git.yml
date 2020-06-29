@@ -1,0 +1,11 @@
+---
+- name: clone projects from github.
+  git: 
+    repo={{ item.remote }}
+    dest=~/{{ item.local }}
+    accept_hostkey=yes
+  with_items:
+    - {remote: "git@github.com:super-runner/transWords.git", local: transWords}
+    - {remote: "git@github.com:super-runner/git_cisco_change_hosts.git", local: git_cisco_change_hosts}
+    - {remote: "git@github.com:super-runner/super-runner.github.io.git", local: superrunner}
+    - {remote: "git@github.com:super-runner/ielts.git", local: ielts}

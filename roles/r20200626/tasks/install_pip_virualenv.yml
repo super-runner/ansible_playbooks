@@ -1,0 +1,10 @@
+---
+- name: install Python requirements globally via pip
+  apt:
+    name:
+      - python-pip
+      - python-virtualenv
+      - virtualenvwrapper
+      - python-setuptools
+    state: present
+  become: True

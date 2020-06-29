@@ -1,0 +1,3 @@
+---
+- name: get the current shell
+  debug: msg="{{ lookup('env', 'SHELL') }}"

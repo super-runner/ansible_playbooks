@@ -1,0 +1,4 @@
+---
+- name: task in job.yml
+  debug: msg="This task is in job.yml"
+

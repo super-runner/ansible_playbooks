@@ -1,0 +1,5 @@
+#!/bin/ansible-playbook
+
+---
+- name: create an email based on template
+  template: src=templates/email.j2 dest=~/mail_to_{{ name }}.txt

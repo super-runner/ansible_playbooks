@@ -1,0 +1,5 @@
+---
+- name: install git if not exist
+  become: True
+  delegate_to: test1
+  apt: pkg=git state=present update_cache=yes

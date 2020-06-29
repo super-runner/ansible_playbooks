@@ -1,0 +1,5 @@
+---
+- name: who
+  debug: msg="who - web"
+
+- include: other.yml

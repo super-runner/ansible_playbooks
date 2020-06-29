@@ -1,0 +1,34 @@
+#!/bin/ansible-playbook
+
+---
+- name: entry point
+  hosts: test1
+  gather_facts: True
+  vars:
+    age: 39
+    sex: female
+  vars_files:
+    - ./vars/common.yml
+
+#  pre_tasks:
+#    - debug: msg="In pre task':' {{ sex }} "
+
+#  post_tasks:
+#   - debug: msg="nothing here."
+#     changed_when: True
+#     notify: watch
+
+#  handlers:
+#    - name: watch
+#      debug: msg="in the handler - watch"
+
+  roles:
+   #- r20200620
+   #- r20200622
+   #- r20200623
+   #- r20200624
+   #- r20200625
+   #- r20200626
+   - r20200628
+
+

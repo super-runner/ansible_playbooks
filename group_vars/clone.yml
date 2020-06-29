@@ -1,0 +1,5 @@
+---
+ansible_user: root
+ansible_password: vc3414985-34024
+ansible_python_interpreter: /usr/bin/python3
+shit: kakaka

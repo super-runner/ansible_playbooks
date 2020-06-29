@@ -1,0 +1,15 @@
+---
+- name: now running in role/web/tasks
+  debug: msg="I am in the role of web" 
+
+- name: trigger handler 'who'
+  copy: >
+    src=sth.txt dest=~/
+  notify: who
+  become: True
+
+- name: use var 'age' from roles/web/vars/main.yml
+  debug: var=age
+
+- include: do.yml
+- include: job.yml

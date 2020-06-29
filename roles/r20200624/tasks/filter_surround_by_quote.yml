@@ -1,0 +1,8 @@
+---
+- set_fact: 
+    domains:
+      - world
+      - hello
+#- set_fact: myhosts=[{{ domains | surround_by_quote|join(", ")}}]
+- set_fact: myhosts=[{{ domains | surround_by_quote }}]
+- debug: var=myhosts 

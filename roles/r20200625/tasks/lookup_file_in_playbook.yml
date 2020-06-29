@@ -1,0 +1,4 @@
+---
+# tasks file for learn
+- name: running in main.yml
+  debug: msg="{{ lookup('file','../files/id_rsa.pub') }}"

@@ -1,0 +1,21 @@
+- name: create /etc/ansible/facts.d directory
+  file:
+    path: /etc/ansible/facts.d
+    recurse: True
+    state: directory
+  become: True
+
+- name: copy /etc/ansible/facts.d/example.fact
+  copy:
+    src: ../files/example.fact
+    dest: /etc/ansible/facts.d/example.fact
+  become: True
+
+- name: fetch ansible_local variable from remote
+  debug: msg=" {{ ansible_local['example']['students']['school'] }}"
+
+- debug: var=hostvars['test1'].ansible_local.example.students.class
+
+- debug: var=hostvars[inventory_hostname].ansible_hostname
+
+- debug: var=ansible_env.HOME

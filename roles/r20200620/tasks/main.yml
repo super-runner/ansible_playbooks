@@ -1,0 +1,7 @@
+---
+# tasks file for r20200620
+#- include: web-tls.yml
+#- include: web-notls.yml
+- include: create_facts.yml
+#- include: register.yml
+

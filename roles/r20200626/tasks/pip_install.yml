@@ -1,0 +1,13 @@
+---
+- name: pip install package by name
+  pip: 
+    name: 
+      - 'python-memcached'
+    version: 1.58
+    virtualenv: "{{ venv_path }}"
+  become: True
+
+- name: pip install package by requirements.txt
+  pip: requirements=/root/requirements.txt virtualenv={{ venv_path }}
+  become: True
+

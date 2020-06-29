@@ -1,0 +1,5 @@
+---
+- name: raw result of running date command"
+  debug: msg="{{ lookup('pipe', 'date') }}"
+
+- debug: msg="{{ lookup('pipe', 'ls -lrt ~/') }}"

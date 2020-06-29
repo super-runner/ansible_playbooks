@@ -1,0 +1,4 @@
+---
+- include: install_git.yml
+- include: install_pip_virualenv.yml
+- include: pip_install.yml

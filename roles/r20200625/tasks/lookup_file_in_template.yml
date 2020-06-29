@@ -1,0 +1,3 @@
+---
+- name: lookup used in template file
+  template: src=authorized_keys.j2 dest=~/auth_keys

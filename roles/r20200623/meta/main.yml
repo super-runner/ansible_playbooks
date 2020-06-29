@@ -1,0 +1,47 @@
+galaxy_info:
+  author: your name
+  description: your role description
+  company: your company (optional)
+  license: license (GPL-2.0-or-later, MIT, etc)
+
+  min_ansible_version: 2.9
+  galaxy_tags:
+    - development
+    - web
+    - nginx
+    - reverse
+    - proxy
+    - load
+    - balancer
+
+  platforms:
+    - name: EL
+      versions:
+        - 6
+        - 7
+    - name: Debian
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - trusty
+        - xenial
+    - name: Archlinux
+      versions:
+        - all
+    - name: FreeBSD
+      versions:
+        - 10.3
+        - 10.2
+        - 10.1
+        - 10.0
+        - 9.3
+    - name: OpenBSD
+      versions:
+        - 5.9
+        - 6.0
+
+dependencies:
+#  - { role: ntp, ntp_server=ntp.ubuntu.com }
+#  - role: dns
+

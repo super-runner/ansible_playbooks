@@ -1,0 +1,9 @@
+---
+# tasks file for web
+- name: main task for 20200624
+  debug: msg="{{ nothing | default('allright') }}"
+
+- include: filter_failed.yml
+- include: task2.yml
+- include: filter_join.yml
+- include: filter_surround_by_quote.yml

@@ -1,0 +1,10 @@
+---
+- debug: var=venv_path
+
+- name: run a python script
+  script: test.py
+  environment:
+    PATH: "{{ venv_path }}/bin"
+  args:
+    executable: python
+  become: True

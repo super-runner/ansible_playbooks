@@ -1,0 +1,8 @@
+---
+- name: Run myprog
+  command: /opt/myprog
+  register: result
+  ignore_errors: True
+
+- debug: var=result
+
