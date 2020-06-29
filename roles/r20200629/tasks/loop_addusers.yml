@@ -1,0 +1,10 @@
+---
+- name: example for loop to add users
+  user:
+    name: "{{ item }}"
+    state: present
+    groups: "vagrant"
+  loop:
+    - testuser1
+    - testuser2
+  become: True

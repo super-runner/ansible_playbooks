@@ -1,7 +1,2 @@
----
-# tasks file for web
-
-- include: task1.yml
-- include: mail.yml
-
-- debug: msg="try to make it changed all the time"
+#- include: mail.yml
+#- include: task1.yml

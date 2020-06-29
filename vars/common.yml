@@ -1,1 +1,4 @@
 ---
+prefix_include: "#- include:"
+role_task_dir: "/root/ansible_playbooks/roles/{{ r }}/tasks/"
+task_main_path: "{{ role_task_dir }}main.yml"

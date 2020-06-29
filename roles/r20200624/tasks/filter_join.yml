@@ -1,8 +1,7 @@
 ---
-- set_fact: 
-    domains: 
+- name: define vars with tasks
+  vars:
+    domains:
       - "jason"
       - "becky"
-- set_fact: myhosts=[{{ domains | join(", ")}}]
-- name: task 3
-  debug: var=myhosts 
+  debug: msg="{{ domains | join(", ") }}"

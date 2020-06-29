@@ -3,6 +3,12 @@
 ---
 - name: entry point
   hosts: test1
+
+  vars_prompt:
+    - name: r
+      prompt: "Enter role"
+      private: no
+
   gather_facts: True
   vars:
     age: 39
@@ -10,17 +16,17 @@
   vars_files:
     - ./vars/common.yml
 
-#  pre_tasks:
-#    - debug: msg="In pre task':' {{ sex }} "
+  pre_tasks:
+    - include: utilities/create_main_file.yml
 
-#  post_tasks:
-#   - debug: msg="nothing here."
-#     changed_when: True
-#     notify: watch
+  post_tasks:
+   - debug: msg=""
+     changed_when: True
+     notify: watch
 
-#  handlers:
-#    - name: watch
-#      debug: msg="in the handler - watch"
+  handlers:
+    - name: watch
+      debug: msg=""
 
   roles:
    #- r20200620
@@ -29,6 +35,7 @@
    #- r20200624
    #- r20200625
    #- r20200626
-   - r20200628
+   #- r20200628
+   - r20200629
 
 

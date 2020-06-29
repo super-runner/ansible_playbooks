@@ -1,0 +1,5 @@
+---
+- name: example for removing job
+  cron: 
+    name: "cron_add"
+    state: absent

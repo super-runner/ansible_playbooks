@@ -1,8 +1,17 @@
 ---
-- set_fact: 
+- name: filter surround_by_quote
+  vars:
     domains:
-      - world
-      - hello
-#- set_fact: myhosts=[{{ domains | surround_by_quote|join(", ")}}]
-- set_fact: myhosts=[{{ domains | surround_by_quote }}]
-- debug: var=myhosts 
+      - "world"
+      - "hello"
+  debug: msg="{{ domains | surround_by_quote }}"
+
+
+
+- name: filter surround_by_quote with loop
+  vars:
+    domains:
+      - "world"
+      - "hello"
+  debug: msg="{{ item }}"
+  loop: "{{ domains | surround_by_quote }}"

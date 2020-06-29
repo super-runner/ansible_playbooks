@@ -1,10 +1,7 @@
----
-# tasks file for learn
-- include: lookup_file_in_playbook.yml
-- include: lookup_file_in_template.yml
-- include: lookup_pipe.yml
-- include: lookup_env.yml
-- include: lookup_password.yml
-- include: lookup_template.yml
-- include: lookup_csvfile.yml
-
+#- include: lookup_csvfile.yml
+#- include: lookup_env.yml
+#- include: lookup_file_in_playbook.yml
+#- include: lookup_file_in_template.yml
+#- include: lookup_password.yml
+#- include: lookup_pipe.yml
+#- include: lookup_template.yml

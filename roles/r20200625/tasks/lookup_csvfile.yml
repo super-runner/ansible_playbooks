@@ -1,3 +1,4 @@
-- set_fact: 
-    user=sue
-- debug: msg="{{ lookup('csvfile', user + ' file=users.csv delimiter=, col=1') }}"
+- name: lookup csvfile
+  vars:
+    user: sue
+  debug: msg="{{ lookup('csvfile', user + ' file=users.csv delimiter=, col=1') }}"

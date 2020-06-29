@@ -1,9 +1,10 @@
 ---
 - set_fact: homepage=~/usr/share/index.html
 - set_fact: fullpath={{ homepage | expanduser }}
-- set_fact: ll=link
+- set_fact: ll=testest
 
-- debug: msg="file name is {{ fullpath | basename }}"
+- name: "use 'basename'"
+  debug: msg="file name is {{ fullpath | basename }}"
 
 - debug: msg=" file directory is {{ fullpath | dirname }}"
 

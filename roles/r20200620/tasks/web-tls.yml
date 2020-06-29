@@ -12,6 +12,7 @@
   become: True
 
 - name: copy TLS key
+  vars:
   copy: src=../files/nginx.key dest={{ key_file }} owner=root mode=0600
   notify: restart nginx
   become: True

@@ -1,0 +1,7 @@
+- name: simple example to use loop
+  vars:
+    mylist:
+      - jason
+      - becky
+  debug: msg="{{ item }}"
+  loop: "{{ mylist }}" # just remember, loop takes a list

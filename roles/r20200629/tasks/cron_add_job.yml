@@ -1,0 +1,3 @@
+---
+- name: example for using cron module
+  cron: name="cron_add" minute="*/5" user=vagrant job="date"
