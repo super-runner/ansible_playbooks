@@ -1,0 +1,11 @@
+---
+- name: example for using loop_var
+  include: being_called.yml
+  vars:
+    onevar: "speedup"  
+  loop:
+    - { name: sarina }
+    - { name: leanne }
+  loop_control:
+    loop_var: user
+

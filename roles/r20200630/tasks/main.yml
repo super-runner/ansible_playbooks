@@ -1,0 +1,4 @@
+#- import_tasks: being_called.yml
+#- import_tasks: fileglob.yml
+- import_tasks: loop_var.yml
+#- import_tasks: with_dict.yml

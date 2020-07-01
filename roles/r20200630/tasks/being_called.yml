@@ -1,0 +1,7 @@
+- debug: msg="{{ user.name }} - {{ item }}"
+  loop:
+    - book1
+    - book2
+    - book3
+
+- debug: var=onevar

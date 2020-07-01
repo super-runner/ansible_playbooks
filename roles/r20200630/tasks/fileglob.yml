@@ -1,0 +1,14 @@
+---
+# Matching is against local system files on the Ansible controller. To iterate a list of files on a remote node, use the find module
+
+- name: Display paths of all .txt files in dir
+  debug: msg="{{ lookup('fileglob', '/root/*.txt') }}"
+  become: True
+  delegate_to: localhost
+
+- name: example for fileglob
+  debug: msg="{{ item }}"
+  with_fileglob:
+    - '/root/ansible_playbooks/*'
+  become: True
+  delegate_to: localhost
