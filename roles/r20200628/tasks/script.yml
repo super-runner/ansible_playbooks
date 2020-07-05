@@ -5,6 +5,6 @@
   script: test.py
   environment:
     PATH: "{{ venv_path }}/bin"
-  args:
-    executable: python
   become: True
+  #args:
+    #executable: python
