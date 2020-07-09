@@ -1,0 +1,8 @@
+#!/bin/ansible-playbook
+#
+---
+- name: shutdown all test machines
+  hosts: test,clone, localhost
+  become: True
+  tasks:
+    - shell: "shutdown -h now"

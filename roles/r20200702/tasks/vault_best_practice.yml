@@ -1,0 +1,6 @@
+---
+- name: print encrypt sec variable
+  debug: msg={{ sec }}
+
+- name: print encrypted variable 'myname'
+  debug: msg={{ myname }}

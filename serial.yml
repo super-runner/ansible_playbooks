@@ -1,0 +1,14 @@
+#!/bin/ansible-playbook
+---
+- name: test for stratety 'serial'
+  hosts: clone:test
+  serial:
+    - 2
+  #max_fail_percentage: 0
+  #ignore_errors: True
+  tasks:
+    #- command: /bin/false
+
+    - debug: msg="222"
+
+    - debug: msg="333"

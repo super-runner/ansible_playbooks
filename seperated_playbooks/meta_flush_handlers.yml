@@ -1,0 +1,29 @@
+#!/bin/ansible-playbook
+
+---
+- name: "test meta: flush_handlers"
+  hosts: test1
+  tasks:
+    - name: task 01
+      command: echo Tasks
+      notify: print message
+
+    - name: task 02
+      command: echo Tasks
+      notify: print message
+
+    - name: meta flush_handlers
+      meta: flush_handlers
+
+    - name: task 03
+      command: echo Tasks
+      #notify: print message
+
+    - name: task 04
+      command: echo Tasks
+      #notify: print message
+
+  handlers:
+    - name: print message
+      command: echo handler executed
+

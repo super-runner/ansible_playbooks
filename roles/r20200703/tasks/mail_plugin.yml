@@ -1,0 +1,11 @@
+---
+- name: test mail plugin
+  mail:
+    host: 192.168.1.13
+    port: 1025
+    #username: "chiweixi@gmail.com"
+    #password: "Infy@vc2045"
+    to: Jason Chi <88933306@qq.com>
+    subject: Ansible-report
+    body: System {{ ansible_hostname }} has been successfully provisioned.
+  delegate_to: localhost

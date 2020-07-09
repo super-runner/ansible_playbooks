@@ -1,0 +1,20 @@
+---
+
+#- name: install git
+#  apt: name=git update_cache=yes
+#  become: True
+
+- name: clone Linus's git repo
+  git:
+    repo: git@test1:private_git_server.git
+    dest: /home/vagrant/linux
+  async: 3600
+  poll: 0
+  register: linux_clone
+
+- name: wait for linux clone to complete
+  async_status:
+    jid: "{{ linux_clone.ansible_job_id }}"
+  register: result
+  until: result.finished
+  retries: 3600

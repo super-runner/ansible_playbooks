@@ -1,0 +1,29 @@
+#!/bin/ansible-playbook
+
+---
+- name: main play entry
+  hosts: test
+  #gather_facts: True # Now this is set to smart for fact aching.
+  vars: {age: 39, sex: female}
+  vars_files:
+    - ./vars/common.yml
+  
+  #vars_prompt:
+    #- name: r
+      #prompt: "Enter role"
+      #private: no
+    
+    #- name: t
+      #prompt: "Enter role"
+      #private: no
+    
+  tasks:
+    - include_role: name="{{ r | default('learn')}}" tasks_from="{{ t | default('main.yml')}}"
+
+
+# -- some other clause ---------------------------------------------------------
+# PLAY parameters
+# pre_tasks:
+# post_tasks:
+
+#- import_playbook: xxx.yml

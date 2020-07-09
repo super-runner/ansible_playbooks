@@ -1,0 +1,17 @@
+---
+#- name: deeee
+#  debug: msg="{{ task_main_path }}"
+
+- name: remove current main.yml
+  delegate_to: localhost
+  become: True
+  file:
+    path: "{{ task_main_path }}"
+    state: absent
+
+- name: build main.yml with all existing yml files in the current directory
+  delegate_to: localhost
+  become: True
+  shell: echo "{{ prefix_include }} {{ item }}" >> "{{ task_main_path }}"
+  with_lines: ls "{{ role_task_dir }}"
+

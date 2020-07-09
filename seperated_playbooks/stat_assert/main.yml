@@ -1,0 +1,13 @@
+#!/bin/ansible-playbook
+
+---
+- hosts: test
+  serial: 1
+  ignore_errors: True
+  tasks:
+   - include_tasks: stat_assert.yml
+     loop: 
+      - /root/hello.txt
+      - /root/t1.txt
+      - /root/t2.txt
+

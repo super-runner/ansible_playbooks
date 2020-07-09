@@ -1,0 +1,5 @@
+---
+- name: example for using changed_when 
+  debug: msg="Tasks run when changed_when is True"
+  changed_when: True
+

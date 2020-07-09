@@ -1,0 +1,10 @@
+---
+- block:
+   - name: stat for {{ item }}
+     stat: path={{ item }}
+     register: st
+
+   - name: assert for {{ item }} 
+     assert:
+       that: st.stat.exists
+  become: True

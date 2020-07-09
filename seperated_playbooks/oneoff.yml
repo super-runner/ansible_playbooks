@@ -1,0 +1,9 @@
+#!/bin/ansible-playbook
+
+---
+- name: install daemonize
+  hosts: localhost:test1
+  gather_facts: True 
+  serial: 1
+  roles:
+    - { role: geerlingguy.mailhog }

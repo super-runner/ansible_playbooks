@@ -1,0 +1,9 @@
+---
+
+- name: set a sudoers file to disable tty for pipelining
+  template: >
+    src=disable-requiretty.j2
+    dest=/etc/sudoers.d/disable-requiretty
+    owner=root group=root mode=0440
+    validate="visudo -cf %s"
+

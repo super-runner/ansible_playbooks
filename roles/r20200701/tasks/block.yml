@@ -1,0 +1,19 @@
+- name: Attempt and graceful roll back demo
+  block:
+    - debug: msg="I execute normally"
+
+    - name: i force a failure
+      command: /bin/false
+
+    - debug: msg="i never execute, due to the above task failing"
+
+  rescue:
+    - debug: msg="i caught an error"
+
+    - name: i force a failure in middle of rescue"
+      command: /bin/false
+
+    - debug: msg="I also never execute"
+
+  always:
+    - debug: msg="This always executes"

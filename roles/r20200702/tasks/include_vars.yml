@@ -1,0 +1,8 @@
+---
+- name: include vars of stuff.yml
+  include_vars:
+    file: stuff.yml
+    name: stuff
+- debug: msg={{ stuff }}
+
+- debug: msg={{ stuff['two'] }}

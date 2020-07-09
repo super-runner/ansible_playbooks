@@ -1,0 +1,5 @@
+---
+# tasks file for learn
+#
+- name: test custom module 'can_reach'
+  can_reach: host=www.baidu.com port=80 timeout=3

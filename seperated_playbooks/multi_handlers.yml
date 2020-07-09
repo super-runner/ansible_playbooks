@@ -1,0 +1,24 @@
+#!/bin/ansible-playbook
+
+---
+- name: test triggers handlers from pre-tasks, tasks and post-tasks
+  hosts: test1
+  pre_tasks:
+    - name: echo Pre Tasks 
+      command: echo Pre Tasks
+      notify: print message
+
+  tasks:
+    - name: echo Tasks
+      command: echo Tasks
+      notify: print message
+
+  post_tasks:
+    - name: echo Post Tasks
+      command: echo Post Tasks
+      notify: print message
+
+  handlers:
+    - name: print message
+      command: echo handler executed
+

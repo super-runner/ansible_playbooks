@@ -1,0 +1,33 @@
+#!/bin/ansible-playbook
+#
+---
+- name: a playbook with tags
+  hosts: test
+  tags:
+   - learn
+   - study
+
+  tasks:
+   - name: task with tag easy
+     debug: msg="This is easy task"
+     tags:
+      - easy
+      - good
+
+   - name: task with tag difficult
+     debug: msg='This is difficult task'
+     tags:
+      - difficult
+      - bad
+
+- name: second play
+  hosts: test1
+  tags:
+    - second
+
+  tasks:
+    - debug: msg="1st task in second play"
+
+    - debug: msg="2nd task in second play"
+      tags:
+        - last

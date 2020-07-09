@@ -1,0 +1,6 @@
+---
+- name: call can_reach.sh
+  script: ../scripts/can_reach.sh www.baidu.com 80 1
+  #args:
+    #executable: bash
+

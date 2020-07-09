@@ -1,0 +1,39 @@
+#!/bin/ansible-playbook
+
+---
+- name: test handler listen
+  hosts: test1
+  tasks:
+    - name: task 01
+      command: echo Tasks
+      notify: shared_event
+
+    - name: task 02
+      command: echo Tasks
+
+    - name: meta flush_handlers
+      meta: flush_handlers
+
+    - name: task 03
+      command: echo Tasks
+      notify: handler_2
+
+    - name: task 04
+      command: echo Tasks
+      notify: handler_3
+
+  handlers:
+    - name: handler_1
+      command: echo handler executed
+      listen: shared_event
+
+    - name: handler_2
+      command: echo handler executed
+      listen: shared_event
+
+    - name: handler_3
+      command: echo handler executed
+      listen: shared_event
+
+
+

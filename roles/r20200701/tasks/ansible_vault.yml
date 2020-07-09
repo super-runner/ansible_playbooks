@@ -1,0 +1,6 @@
+---
+- name: include vars of ./vars/encrypt.yml
+  include_vars:
+    file: encrypt.yml
+    
+- debug: msg="{{ mygirl }}"

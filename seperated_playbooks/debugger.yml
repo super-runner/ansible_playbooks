@@ -1,0 +1,16 @@
+#!/bin/ansible-playbook
+
+---
+- name: test debug callback
+  hosts: test1
+  strategy: debug
+  vars:
+    name1: 'jason'
+    name2: 'becky'
+
+  tasks:
+    - apt: name=kkpp state=present
+
+    - debug: var=name1
+
+    - debug: msg={{ name2 }}

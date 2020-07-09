@@ -1,0 +1,20 @@
+#!/bin/ansible-playbook
+
+# This file also shows how to use colon in debug: msg="..."
+---
+- name: example usage for vars_prompt
+  hosts: test1
+  vars_prompt:
+   - name: r
+     prompt: "Enter role name"
+     private: no
+
+   - name: t
+     prompt: "Enter task name"
+     private: no
+
+  tasks:
+    - debug: msg="role{{':'}} {{ r }}, task{{':'}} {{ t }}"
+
+
+

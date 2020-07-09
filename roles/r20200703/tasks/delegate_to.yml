@@ -1,0 +1,5 @@
+---
+- name: test delegate_to
+  delegate_to: test2
+  setup: filter=ansible_user
+  run_once: True

@@ -1,0 +1,4 @@
+ansible_user: jason
+ansible_password: vc2006xj
+ansible_connection: winrm
+ansible_winrm_server_cert_validation: ignore
